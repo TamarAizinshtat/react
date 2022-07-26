@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter,Routes,Route, } from "react-router-dom";
 import './index.css';
-import App from './App';
-import Tami from "./tami";
+import Login from './components/login';
+import Customer from "./components/customer";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="tami" element={<Tami />} />
+      <Route path="/" element={<Login />} />
+      <Route path="customer" element={<Customer />} />
       </Routes>
   </BrowserRouter>
 );

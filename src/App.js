@@ -10,7 +10,7 @@ function App() {
           borderBottom: "solid 1px",
           paddingBottom: "1rem",
         }}>
-        <Link to="/tami">tami</Link>
+        <Link to="/"> </Link>
         </nav>
     </div>
   );
