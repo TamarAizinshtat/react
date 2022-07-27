@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import './login.css'
 import { userLogin } from '../api/user'
-// import { manegerLogin } from '../api/maneger'
 import {  Link,  } from "react-router-dom";
-// Outlet,
-
 
 export default function Login() {
     const [username, setUsername] = useState('');
