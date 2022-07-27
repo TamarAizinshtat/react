@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const login = async (user) => {
+export const userLogin = async (user) => {
 
     try {
         return await axios.post('https://meetings-test.herokuapp.com/user/signin ', user);

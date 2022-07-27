@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,8 @@ function App() {
           borderBottom: "solid 1px",
           paddingBottom: "1rem",
         }}>
-        <Link to="/"> </Link>
+        <Link to="/admin">maneger</Link> |{" "}
+        <Link to="/login">user</Link>
         </nav>
     </div>
   );
