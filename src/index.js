@@ -5,10 +5,10 @@ import './index.css';
 import Login from './components/login';
 import Customer from "./components/customer";
 // import reportWebVitals from './reportWebVitals';
-import Admin from './admin/admin';
-import BusinessDatails from './admin/businessDetails';
-import Meetings from './admin/meetings';
-import Services from './admin/services';
+import Admin from './components/admin/admin';
+import BusinessDatails from './components/admin/businessDetails';
+import Meetings from './components/admin/meetings';
+import Services from './components/admin/services';
 import App from './App';
 import Tami from './tami';
 
