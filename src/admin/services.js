@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export default function Services() {
     return (
       <main style={{ padding: "1rem 0" }}>
@@ -5,7 +7,7 @@ export default function Services() {
       </main>
     );
   }
-  export default async function get() {
+  export async function get() {
     try {
         return await axios.get('https://meetings-test.herokuapp.com/service/')
     }
