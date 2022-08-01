@@ -8,11 +8,12 @@ import TextField from '@mui/material/TextField';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { deepOrange } from '@mui/material/colors';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
+    let navigate = useNavigate();
     function handleSubmit() {
         const user = {
             "user": {
@@ -25,7 +26,7 @@ export default function Login() {
         console.log(loggined);
         alert(loggined)
         if (loggined) {
-            window.open(`/admin`);
+            navigate(`/admin`);
         }
     }
     return (

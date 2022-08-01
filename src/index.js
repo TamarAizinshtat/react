@@ -8,7 +8,9 @@ import Customer from "./components/customer";
 import Admin from './components/admin/admin';
 import BusinessDetails from './components/admin/businessDetails';
 import Meetings from './components/admin/meetings';
+
 import Services from './components/admin/services';
+import ScheduleMeeting from './components/scheduleMeeting';
 // import AllBusiness from './components/allBusiness';
 import App from './App';
 import Tami from './tami';
@@ -34,6 +36,7 @@ root.render(
       }/>
       <Route path="/login" element={<Login />} />
       <Route path="customer" element={<Customer />} />
+      <Route path="scheduleMeeting" element={<ScheduleMeeting />} />
       </Routes>
   </BrowserRouter>
 );
