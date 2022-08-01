@@ -17,14 +17,14 @@ export default function Login() {
     function handleSubmit() {
         const user = {
             "user": {
-                "username": username,
+                "manegername": username,
                 "password": password
             }
         }
         // e.preventDefault();
         const loggined = userLogin(user);
         console.log(loggined);
-        alert(loggined)
+        alert("loggined")
         if (loggined) {
             navigate(`/admin`);
         }

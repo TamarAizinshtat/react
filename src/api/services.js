@@ -6,8 +6,18 @@ import axios from 'axios'
         return data;
     }
     catch (error) {
-        console.log('error in get meetings');
+        console.log('error in get service');
     }
+}
+export const get = async (id) => {
+
+    try {
+        return await axios.get('https://meetings-test.herokuapp.com/service/ '+ id);
+    }
+    catch (error) {
+        console.log('error in get service', error);
+    }
+
 }
 export const post = async (service) => {
 
@@ -15,13 +25,24 @@ export const post = async (service) => {
         return await axios.post('https://meetings-test.herokuapp.com/service/ ', service);
     }
     catch (error) {
-        console.log('error in add user');
+        console.log('error in add service');
     }
 }
 export const put = async (service) => {
 
     try {
         return await axios.put('https://meetings-test.herokuapp.com/service/ ', service);
+    }
+    catch (error) {
+        console.log('error in put service: ', error);
+    }
+
+}
+
+export const deleteService = async (service) => {
+
+    try {
+        return await axios.delete('https://meetings-test.herokuapp.com/service/ ', service);
     }
     catch (error) {
         console.log('error in put service: ', error);
