@@ -3,7 +3,7 @@ import { getServices } from '../api/services'
 import { useNavigate } from 'react-router-dom';
 
 import { axios } from 'axios';
-import 'customer.css'
+
 
 export default function Customer() {
     let navigate = useNavigate();
