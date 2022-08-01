@@ -21,13 +21,20 @@ export default function Login() {
                 "password": password
             }
         }
-        // e.preventDefault();
-        const loggined = userLogin(user);
-        console.log(loggined);
-        alert(loggined)
-        if (loggined) {
-            navigate(`/admin`);
-        }
+       
+           
+        userLogin(user).then(async (data) => {
+                console.log(data)
+                if(data){
+                    
+                }
+       })
+        // const loggined = userLogin(user);
+        // console.log(loggined);
+        // alert(loggined)
+        // if (loggined) {
+        //     navigate(`/admin`);
+        // }
     }
     return (
         <div>
