@@ -15,6 +15,7 @@ export default function Customer() {
         getServices().then(async (data) => {
             console.log(data)
             let tempList = await data.map((item) => {
+                // key=item.serviceName
                 let b = {
                     serviceName: item.serviceName,
                     numOfMeetings: item.numOfMeetings,
@@ -46,9 +47,9 @@ export default function Customer() {
         <div>
             <h1>welcome dear customer🤍🧡💛💚💙💜🤎</h1>
             <h2>this is our services , chose one of them and create a meeting</h2>
-            <div class ="container" >
+            <div  >
             {Array.from(services).map((el) => (
-                <span>
+                <span id={el.serviceName}>
                     <label>{el.serviceName}</label><br />
                     <button onClick={(() => handleclick(el))}>create meeting</button><br /><br />
                     <br />
