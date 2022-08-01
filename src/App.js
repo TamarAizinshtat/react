@@ -13,8 +13,9 @@ function App() {
         }}>
         {/* <Link to="/admin">maneger</Link> |{" "} */}
         <Link to="/login">manager</Link>
-        {/* <Customer></Customer> */}
+        
         </nav>
+        <Customer></Customer>
     </div>
   );
 }
