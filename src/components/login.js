@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import './login.css'
 import { userLogin } from '../api/user'
-import {  Link,  } from "react-router-dom";
+import { Link, } from "react-router-dom";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+// import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import { deepOrange } from '@mui/material/colors';
 
 export default function Login() {
     const [username, setUsername] = useState('');
@@ -17,19 +23,23 @@ export default function Login() {
         // e.preventDefault();
         const loggined = userLogin(user);
         console.log(loggined);
+        alert(loggined)
         if (loggined) {
-            return <Link to="/customer">customer</Link>
+            window.open(`/admin`);
         }
     }
     return (
         <div>
-            <h2>---userLogin---</h2><br />
-            <label>user name   </label><br />
-            <input type="text" placeholder="user name" required onChange={(e) => { setUsername(e.target.value) }}></input><br /><br /><br />
-            <label>password   </label><br />
-            <input type="password" placeholder="password" required onChange={(e) => { setPassword(e.target.value) }}></input><br /><br /><br /><br /><br /><br />
-            {/* <button onClick={() =>handleSubmit()} /> */}
-            <button onClick={handleSubmit}>submit</button>
+            <h2>---Login to manager screen---</h2><br /><br />
+            
+           
+            {/* <Avatar src="/broken-image.jpg" /> */}
+            <TextField id="outlined-basic" label="user name" variant="outlined" required onChange={(e) => { setUsername(e.target.value) }} />
+            <br /><br />
+            <TextField id="outlined-basic" label="password" variant="outlined" required onChange={(e) => { setPassword(e.target.value) }} />
+            <br /><br />
+            <Button variant="contained" onClick={handleSubmit}>submit</Button>
+           
         </div>
 
     )
