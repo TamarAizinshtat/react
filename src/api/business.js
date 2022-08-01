@@ -10,6 +10,16 @@ export const get = async (id) => {
     }
 
 }
+export const getAll = async () => {
+
+    try {
+        return await axios.get('https://meetings-test.herokuapp.com/business/ ');
+    }
+    catch (error) {
+        console.log('error in get business', error);
+    }
+
+}
 export const post = async (business) => {
 
     try {

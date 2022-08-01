@@ -17,7 +17,7 @@ export default function Login() {
     function handleSubmit() {
         const user = {
             "user": {
-                "username": username,
+                "manegername": username,
                 "password": password
             }
         }
@@ -35,6 +35,7 @@ export default function Login() {
         // if (loggined) {
         //     navigate(`/admin`);
         // }
+
     }
     return (
         <div>
