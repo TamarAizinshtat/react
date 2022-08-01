@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import React, { useState } from 'react'
 function Admin() {
     return (
         <div>
@@ -8,7 +8,7 @@ function Admin() {
               borderBottom: "solid 1px",
               paddingBottom: "1rem",
             }}>
-            <Link to="/businessDatails">businessDetails</Link> |{" "}
+            <Link to="/businessDetails">businessDetails</Link> |{" "}
             <Link to="/meetings">meetings</Link> |{" "}
             <Link to="/services">services</Link>
             </nav>

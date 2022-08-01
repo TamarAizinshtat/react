@@ -1,6 +1,7 @@
 
 import './App.css';
 import { Link } from "react-router-dom";
+import Customer from './components/customer.js'
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
           borderBottom: "solid 1px",
           paddingBottom: "1rem",
         }}>
-        <Link to="/admin">maneger</Link> |{" "}
-        <Link to="/login">user</Link>
+        {/* <Link to="/admin">maneger</Link> |{" "} */}
+        <Link to="/login">manager</Link>
+        <Customer></Customer>
         </nav>
     </div>
   );

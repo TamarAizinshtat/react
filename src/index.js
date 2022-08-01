@@ -6,9 +6,10 @@ import Login from './components/login';
 import Customer from "./components/customer";
 // import reportWebVitals from './reportWebVitals';
 import Admin from './components/admin/admin';
-import BusinessDatails from './components/admin/businessDetails';
+import BusinessDetails from './components/admin/businessDetails';
 import Meetings from './components/admin/meetings';
 import Services from './components/admin/services';
+// import AllBusiness from './components/allBusiness';
 import App from './App';
 import Tami from './tami';
 
@@ -19,9 +20,11 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="tami" element={<Tami />} />
       <Route path="admin" element={<Admin />} />
-      <Route path="businessDatails" element={<BusinessDatails />} />
+      <Route path="businessDetails" element={<businessDetails />} />
       <Route path="meetings" element={<Meetings />} />
       <Route path="services" element={<Services />} />
+      {/* <Route path="allBusiness" element={<AllBusiness />} /> */}
+    
       <Route
       path="*"
       element={
