@@ -6,7 +6,7 @@ import axios from 'axios'
         return data;
     }
     catch (error) {
-        console.log('error in add user');
+        console.log('error in get meetings');
     }
 }
 export const post = async (service) => {

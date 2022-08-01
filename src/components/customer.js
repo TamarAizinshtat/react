@@ -3,62 +3,60 @@ import { getServices } from '../api/services'
 import { useNavigate } from 'react-router-dom';
 
 import { axios } from 'axios';
+import 'customer.css'
 
-
-export default  function Customer() {
+export default function Customer() {
     let navigate = useNavigate();
     const [services, setServices] = useState([]);
     useEffect(() => {
-        const data =  getServices();
+        // const data =  getServices();
 
-        setServices(data);
-        console.log(data);
-        // async function getServices() {
-        //     debugger;
-        //     try {
-        //         debugger
-        //         const {data} = await axios.get(`https://meetings-test.herokuapp.com/service?business_id=703bcd08-717b-47b9-b86c-29710095399e`);
-        //         debugger
-        //         let tempList = await data.map((item) => {
-        //             let b = {
-        //                 serviceName: item.serviceName,
-        //                 numOfMeetings: item.numOfMeetings,
-        //                 durationOfMeeting: item.durationOfMeeting,
-        //                 cost: item.cost,
-        //                 openingHours: item.openingHours,
-        //                 address: {
-        //                     number: item.address.number,
-        //                     street: item.address.street,
-        //                     city: item.address.city
-        //                 }
-        //             }
-        //             return b;
-        //         })
-        //         setServices(tempList)
-        //     } catch (err) {
-        //         console.log(err)
-        //     }
-        // }
-        // getServices();
+        // setServices(data);
+        // console.log(data);
+        getServices().then(async (data) => {
+            console.log(data)
+            let tempList = await data.map((item) => {
+                let b = {
+                    serviceName: item.serviceName,
+                    numOfMeetings: item.numOfMeetings,
+                    durationOfMeeting: item.durationOfMeeting,
+                    cost: item.cost,
+                    openingHours: item.openingHours,
+                    address: {
+                        number: item.address.number,
+                        street: item.address.street,
+                        city: item.address.city
+                    }
+                }
+                return b;
+            })
+            setServices(tempList)
+
+
+            
+        })
     }, []);
     useEffect(() => {
-        // console.log(services);
         debugger
-    },[services]);
+    }, [services]);
     function handleclick(service) {
-        sessionStorage.setItem("service", service);
-        // navigate('/scheduleMeeting', { props: { service: service } }) ;
+        sessionStorage.setItem("service", JSON.stringify(service));
+        navigate('/scheduleMeeting', { state: { service: service } });
     }
     return (
         <div>
             <h1>welcome dear customer🤍🧡💛💚💙💜🤎</h1>
             <h2>this is our services , chose one of them and create a meeting</h2>
+            <div class ="container" >
             {Array.from(services).map((el) => (
-            <div>
-                <label>{el.serviceName}</label><br />
-                <button onClick={handleclick(el)}>create meeting</button><br /><br />
-            </div>
+                <span>
+                    <label>{el.serviceName}</label><br />
+                    <button onClick={(() => handleclick(el))}>create meeting</button><br /><br />
+                    <br />
+                </span>
+
             ))}
+            </div>
         </div>
     )
 }
