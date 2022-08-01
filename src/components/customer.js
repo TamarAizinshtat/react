@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getServices } from '../api/services'
+import { getServices } from '../api/services';
 import { useNavigate } from 'react-router-dom';
-
+import './scheduleMeeting';
+import '../api/services';
 import { axios } from 'axios';
 
 export default function Customer() {
@@ -37,12 +38,13 @@ export default function Customer() {
         })
     }, []);
     useEffect(() => {
-        debugger
+       
     }, [services]);
     function handleclick(service) {
         sessionStorage.setItem("service", JSON.stringify(service));
         navigate('/scheduleMeeting', { state: { service: service } });
     }
+   
     return (
         <div>
             <h1>welcome dear customer🤍🧡💛💚💙💜🤎</h1>
@@ -52,6 +54,7 @@ export default function Customer() {
                 <span id={el.serviceName}>
                     <label>{el.serviceName}</label><br />
                     <button onClick={(() => handleclick(el))}>create meeting</button><br /><br />
+
                     <br />
                 </span>
 
